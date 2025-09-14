@@ -6,12 +6,13 @@
     <title>Food Construct</title>
     <!-- Google-шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Подключение внешних стилей -->
+    <!-- Подключение внешнего CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="container">
         <h1>Food Construct</h1>
         <nav>
             <a href="#about">О нас</a>
@@ -19,69 +20,85 @@
             <a href="#menu">Заказы</a>
             <a href="#contacts">Контакты</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <!-- О нас -->
-        <section id="about">
-            <h2>О нас</h2>
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Интерьер ресторана Food Construct">
-            <p>Food Construct — доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
-        </section>
+<main class="container">
+    <!-- О компании -->
+    <section id="about">
+        <h2>О нас</h2>
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+             alt="Интерьер ресторана Food Construct">
+        <p>
+            Food Construct – доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую
+            точку города к назначенному времени.
+        </p>
+    </section>
 
-        <!-- Преимущества -->
-        <section id="advantages">
-            <h2>Преимущества Food Construct</h2>
-            <ul>
-                <li>Быстрая доставка по всей Москве</li>
-                <li>Только свежие и качественные продукты</li>
-                <li>Возможность собрать индивидуальный ланч</li>
-            </ul>
-        </section>
+    <!-- Преимущества -->
+    <section id="advantages">
+        <h2>Преимущества Food Construct</h2>
+        <ul>
+            <li>Привозим обед к назначенному времени без опозданий</li>
+            <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
+            <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
+        </ul>
+    </section>
 
-        <!-- Популярные блюда -->
-        <section id="menu">
-            <h2>Самые популярные блюда</h2>
-            <table>
+    <!-- Популярные блюда -->
+    <section id="menu">
+        <h2>Топ-5 популярных блюд</h2>
+        <table>
+            <thead>
                 <tr>
-                    <th>Блюдо</th>
-                    <th>Описание</th>
+                    <th>№</th>
+                    <th>Название</th>
+                    <th>Кол-во заказов в неделю</th>
                     <th>Цена</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
-                    <td>Куриные крылышки</td>
-                    <td>Острые крылышки с соусом</td>
-                    <td>350 ₽</td>
+                    <td>1</td>
+                    <td>Лазанья</td>
+                    <td>185</td>
+                    <td>385 ₽</td>
                 </tr>
                 <tr>
-                    <td>Салат Цезарь</td>
-                    <td>С курицей и фирменным соусом</td>
-                    <td>300 ₽</td>
+                    <td>2</td>
+                    <td>Том Ям с креветками</td>
+                    <td>161</td>
+                    <td>365 ₽</td>
                 </tr>
                 <tr>
-                    <td>Суп дня</td>
-                    <td>Горячий суп по сезону</td>
-                    <td>250 ₽</td>
+                    <td>3</td>
+                    <td>Норвежский суп</td>
+                    <td>144</td>
+                    <td>270 ₽</td>
                 </tr>
                 <tr>
-                    <td>Рис с овощами</td>
-                    <td>Ароматный рис с овощами и специями</td>
-                    <td>280 ₽</td>
+                    <td>4</td>
+                    <td>Жареная картошка с грибами</td>
+                    <td>132</td>
+                    <td>150 ₽</td>
                 </tr>
                 <tr>
-                    <td>Стейк из рыбы</td>
-                    <td>Нежный стейк с гарниром</td>
-                    <td>500 ₽</td>
+                    <td>5</td>
+                    <td>Котлеты из курицы с картофельным пюре</td>
+                    <td>128</td>
+                    <td>225 ₽</td>
                 </tr>
-            </table>
-        </section>
-    </main>
+            </tbody>
+        </table>
+    </section>
+</main>
 
-    <!-- Футер -->
-    <footer id="contacts">
-        <p>Свяжитесь с нами: <a href="tel:+74951234567">+7 (495) 123-45-67</a> | <a href="mailto:info@foodconstruct.ru">info@foodconstruct.ru</a></p>
+<footer id="contacts">
+    <div class="container">
+        <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
         <p>&copy; 2025 Food Construct</p>
-    </footer>
+    </div>
+</footer>
 
 </body>
 </html>
