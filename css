@@ -1,3 +1,4 @@
+/* Сброс и общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +32,6 @@ nav a {
     text-decoration: none;
     font-size: 18px;
     color: #000;
-    font-family: 'Roboto', sans-serif;
 }
 
 nav a:hover {
@@ -50,12 +50,10 @@ section {
 section h2 {
     margin-bottom: 15px;
     font-size: 22px;
-    font-weight: 700;
 }
 
 section p {
     margin-bottom: 15px;
-    font-size: 16px;
 }
 
 /* Изображение */
@@ -65,6 +63,7 @@ img {
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+    display: block;
 }
 
 /* Список */
@@ -75,7 +74,6 @@ ul {
 
 ul li {
     margin-bottom: 8px;
-    font-size: 16px;
 }
 
 /* Таблица */
@@ -94,11 +92,6 @@ th, td {
     text-align: center;
 }
 
-th {
-    font-weight: 700;
-    background-color: #f5f5f5;
-}
-
 /* Футер */
 footer {
     background-color: black;
@@ -110,14 +103,8 @@ footer {
 footer a {
     color: #f44336;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
 }
 
 footer a:hover {
     text-decoration: underline;
-}
-
-footer p {
-    margin-bottom: 10px;
-    font-size: 16px;
 }
