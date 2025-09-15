@@ -1,121 +1,186 @@
-/* Сброс и общие правила */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; 
+    padding: 0; 
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #111;
-    background: #fff;
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Шапка */
-header {
-    background: #fff;
-    border-bottom: 2px solid #eee;
-    padding: 20px 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6; 
     color: #000;
-    transition: color 0.3s;
+    background-color: #f9f9f9; 
 }
 
-nav a:hover {
-    color: #f44336;
+header {   
+    background-color: #fff;
+    color: #000;
+    padding: 1.5rem 0; 
+    margin-bottom: 2rem;  
+    border-bottom: 1px solid #eee; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Основное содержимое */
-main {
-    padding: 40px 0;
+.container {      
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 2rem;
 }
 
-section {
-    margin-bottom: 60px;
+.header-content {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-section h2 {
-    font-size: 26px;
+h1 {    
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    color: #000;
 }
 
-section p {
-    font-size: 18px;
-    margin-top: 15px;
+nav {    
+    display: flex;
+    gap: 1.5rem;   
 }
 
-/* Картинка */
-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 15px;
+nav a {   
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-/* Список преимуществ */
+nav a:hover {   
+    background-color: #f2f2f2;
+    color: #d35400;
+}
+
+main {
+    margin-bottom: 2rem; 
+}
+
+section {  
+    background: white;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+h2 {    
+    color: #000;
+    margin-bottom: 0rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.about-content {
+    display: flex;          
+    gap: 2rem;              
+    align-items: center;    
+}
+
+.about-image {
+    width: 700px;           
+    height: 400px;          
+    border-radius: 8px;     
+    object-fit: cover;      
+    border: 1px solid #ddd; 
+    background-color: #f0f0f0; 
+    display: flex;          
+    justify-content: center;
+    align-items: center;    
+    color: #888;            
+    font-style: italic;     
+}
+
+p {
+    font-size: 1.1rem;     
+    margin-bottom: 1rem;    
+    color: #000;            
+    font-weight: 500;
+}
+
 ul {
-    list-style: disc;
-    padding-left: 25px;
+    list-style-position: inside; 
+    padding-left: 1rem;    
+    font-weight: 500;
 }
 
-ul li {
-    font-size: 18px;
-    margin-bottom: 10px;
+li {  
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #000;
 }
 
-/* Таблица */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 1rem;
 }
 
-th, td {
-    border: 1px solid #333;
-    padding: 12px 10px;
-    text-align: center;
+th, td { 
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #000;
+    font-weight: 600;
 }
 
-thead {
-    background: #f4f4f4;
-}
-
-/* Футер */
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-}
-
-footer a {
-    color: #f44336;
-    text-decoration: none;
+th { 
+    background: #f2f2f2;
     font-weight: 700;
-    transition: color 0.3s;
+    font-size: 1.2rem;
 }
 
-footer a:hover {
-    color: #ff7961;
+footer {  
+    background-color: black;
+    color: white; 
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white; 
+}
+
+.contact-info a {    
+    color: white;  
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover { 
+    text-decoration: underline;
+    color: #ffed85; 
+}
+
+footer p {
+    color: white; 
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;     
+        justify-content: center; 
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        width: 100%;
+    }
 }
