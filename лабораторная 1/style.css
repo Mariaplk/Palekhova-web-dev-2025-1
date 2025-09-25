@@ -1,0 +1,190 @@
+* {
+    margin: 0; /* убираем внешние отступы */
+    padding: 0; /* убираем внутренние отступы */
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6; /* межстрочный интервал */
+    color: #000;
+    background-color: #f9f9f9; /* светло-серый фон страницы */
+}
+
+header {    /* шапка сайта */
+    background-color: #fff;
+    color: #000;
+    padding: 1.5rem 0; /* отступ сверху и снизу */
+    margin-bottom: 2rem;   /* отступ снизу */
+    border-bottom: 1px solid #eee; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {      /* контейнер для центрирования контента */
+    max-width: 1200px;
+    margin: 0 auto; /* центрирование по горизонтали */
+    padding: 0 2rem;
+}
+
+.header-content {  /* расположение элементов в шапке */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {    /* главный заголовок */
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+nav {    /* навигационное меню */
+    display: flex;
+    gap: 1.5rem;   /* расстояние между ссылками */
+}
+
+nav a {    /* ссылки в навигации */
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {   /* эффект при наведении на ссылки */
+    background-color: #f2f2f2;
+    color: #d35400;
+}
+
+main {
+    margin-bottom: 2rem; /* отступ снизу в основном содержимом*/
+}
+
+section {  /* секции контента */
+    background: white;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 8px; /* закругленные углы секций*/
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* легкая тень секций */
+}
+
+h2 {    /* заголовки секций */
+    color: #000;
+    margin-bottom: 0rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Блок "О нас" с изображением и текстом */
+.about-content {
+    display: flex;          /* Гибкое расположение */
+    gap: 2rem;              /* Расстояние между элементами */
+    align-items: center;    /* Выравнивание по центру */
+}
+
+/* Изображение в блоке "О нас" */
+.about-image {
+    width: 700px;           /* Ширина изображения */
+    height: 400px;          /* Высота изображения */
+    border-radius: 8px;     /* Закругленные углы */
+    object-fit: cover;      /* Обрезка изображения по размеру */
+    border: 1px solid #ddd; /* Серая рамка */
+    background-color: #f0f0f0; /* Серый фон если нет изображения */
+    display: flex;          /* Для центрирования текста */
+    justify-content: center;/* Центрирование по горизонтали */
+    align-items: center;    /* Центрирование по вертикали */
+    color: #888;            /* Серый цвет текста */
+    font-style: italic;     /* Курсивный шрифт */
+}
+
+/* Абзацы текста */
+p {
+    font-size: 1.1rem;      /* Размер шрифта */
+    margin-bottom: 1rem;    /* Отступ снизу */
+    color: #000;            /* Черный цвет */
+    font-weight: 500;
+}
+
+/* Маркированные списки */
+ul {
+    list-style-position: inside; /* Маркеры внутри блока */
+    padding-left: 1rem;     /* Отступ слева */
+    font-weight: 500;
+}
+
+li {  /* Элементы списка */
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td { /* Ячейки таблицы */
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #000;
+    font-weight: 600;
+}
+
+th { /* Заголовки таблицы */
+    background: #f2f2f2;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer {  /* Подвал сайта */
+    background-color: black;
+    color: white; 
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white; 
+}
+
+.contact-info a {    /* Ссылки в контактах */
+    color: white;  
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover { /* Эффект при наведении на контактные ссылки */
+    text-decoration: underline;
+    color: #ffed85; 
+}
+
+footer p {
+    color: white; /* Белый шрифт для текста в футере */
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;     /* Перенос на новую строку */
+        justify-content: center; /* Центрирование */
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        width: 100%;
+    }
+}
