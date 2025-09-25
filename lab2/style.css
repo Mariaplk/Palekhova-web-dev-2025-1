@@ -1,0 +1,162 @@
+
+
+* {
+	box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #333333;
+	background-color: #f8f9fa;
+
+}
+
+
+header {
+	background-color: #1a1a1a;
+	color: white;
+	padding: 20px 0;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.main-menu ul {
+	display: flex;
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	
+}
+
+.main-menu li {
+	display: inline;
+	margin-right: 20px;
+}
+
+footer {
+	background-color: #1a1a1a;
+	color: white;
+	padding: 20px 0;
+}
+
+.container {
+	max-width: 75%;
+	margin: 0 auto;
+}
+
+.main-menu a {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.main-menu a:hover {
+	color: #ff6b35;
+}
+
+.auth-item {
+	margin-left: auto; 
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 700;
+	color: #1a1a1a;
+	margin-bottom: 20px;
+}
+
+p {
+	text-align: justify;
+	font-size: 16px;
+	color: #333333;
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+
+
+img {
+	width: 100%;
+	height: auto;
+	max-width: 600px;
+	display: block;
+	margin: 20px 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+th, td {
+	padding: 12px;
+	border: 1px solid #ddd;
+	text-align: left;
+}
+
+th {
+	background-color: #1a1a1a;
+	font-weight: 700;
+	color: white;
+}
+
+/*ôîðìà îáðàòíîé ñâÿçè*/
+
+form {
+	margin: 0 auto;
+	background: white;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding: 20px;
+	height: 100%;
+	width: auto;
+}
+
+
+/*ôîðìà àâòîðèçàöèè*/
+
+body.auth-page {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("images/auth.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.auth-container {
+	background: white;
+	padding: 30px;
+	width: 300px;
+
+}		
+
+.auth-container form {
+	background: none !important;
+	margin: 0 auto;
+	padding: 20px;
+	height: 100%;
+	width: auto;
+}
+
+.auth-container h1 {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.auth-container button {
+	margin-top: 10px;
+}
