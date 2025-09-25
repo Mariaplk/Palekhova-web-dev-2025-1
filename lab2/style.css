@@ -1,162 +1,77 @@
-
-
-* {
-	box-sizing: border-box;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-
-body {
-	font-family: 'Roboto', sans-serif;
-	margin: 0;
-	padding: 0;
-	color: #333333;
-	background-color: #f8f9fa;
-
-}
-
-
-header {
-	background-color: #1a1a1a;
-	color: white;
-	padding: 20px 0;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 30px;
-}
-
-.main-menu ul {
-	display: flex;
-	margin: 0;
-	list-style: none;
-	padding: 0;
-	
-}
-
-.main-menu li {
-	display: inline;
-	margin-right: 20px;
-}
-
-footer {
-	background-color: #1a1a1a;
-	color: white;
-	padding: 20px 0;
-}
-
-.container {
-	max-width: 75%;
-	margin: 0 auto;
-}
-
-.main-menu a {
-	color: white;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-	text-decoration: none;
-}
-
-.main-menu a:hover {
-	color: #ff6b35;
-}
-
-.auth-item {
-	margin-left: auto; 
-}
-
-h2 {
-	font-size: 28px;
-	font-weight: 700;
-	color: #1a1a1a;
-	margin-bottom: 20px;
-}
-
-p {
-	text-align: justify;
-	font-size: 16px;
-	color: #333333;
-	font-weight: 400;
-	margin-bottom: 20px;
-}
-
-
-
-img {
-	width: 100%;
-	height: auto;
-	max-width: 600px;
-	display: block;
-	margin: 20px 0;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	margin: 20px 0;
-}
-
-th, td {
-	padding: 12px;
-	border: 1px solid #ddd;
-	text-align: left;
-}
-
-th {
-	background-color: #1a1a1a;
-	font-weight: 700;
-	color: white;
-}
-
-/*ôîðìà îáðàòíîé ñâÿçè*/
-
-form {
-	margin: 0 auto;
-	background: white;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	padding: 20px;
-	height: 100%;
-	width: auto;
-}
-
-
-/*ôîðìà àâòîðèçàöèè*/
-
+/* Общие стили для страницы */
 body.auth-page {
-	margin: 0;
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-image: url("images/auth.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('login.jpg') no-repeat center center fixed; 
+    background-size: cover;
 }
 
+/* Контейнер формы */
 .auth-container {
-	background: white;
-	padding: 30px;
-	width: 300px;
-
-}		
-
-.auth-container form {
-	background: none !important;
-	margin: 0 auto;
-	padding: 20px;
-	height: 100%;
-	width: auto;
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* полупрозрачный белый */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
 }
 
+/* Заголовок */
 .auth-container h1 {
-	text-align: center;
-	margin-bottom: 25px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
-.auth-container button {
-	margin-top: 10px;
+/* Поля ввода */
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
 }
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+    border-color: #ff6600; /* оранжевая подсветка при фокусе */
+}
+
+/* Чекбокс */
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+/* Кнопка */
+.auth-container button {
+    width: 100%;
+    padding: 10px;
+    background: #ff6600;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-container button:hover {
+    background: #e65c00;
+}
+
