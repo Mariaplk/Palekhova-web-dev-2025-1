@@ -1,0 +1,138 @@
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: white;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.dish-card:hover {
+    border: 2px solid tomato;
+}
+
+.dish-card:hover .add-btn {
+    background-color: tomato;
+    color: white;
+}
+
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+}
+
+.dish-card .price {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: -0.3rem;
+    color: #000;
+}
+
+.dish-card .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
+    color: #000;
+}
+
+.dish-card .weight {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.add-btn {
+    background-color: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    nav {
+        justify-content: space-between;
+    }
+    
+    .about-image {
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: calc(1.1rem + 4px);
+    }
+    
+    .dishes-section h2 {
+        text-align: center;
+    }
+    
+    .about-image {
+        width: 100%;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 0.5rem;
+    }
+}
