@@ -113,10 +113,94 @@
             </div>
         </section>
     </main>
-<!-- ДОБАВЛЕННЫЙ БЛОК — КНОПКА ДЛЯ ПЕРЕХОДА К ЗАКАЗУ -->
-<div class="order-button-wrapper">
-    <a href="order-form.html" class="order-button">Перейти к оформлению заказа</a>
-</div>
+
+    <!-- ФОРМА ЗАКАЗА -->
+    <section class="order-section container">
+        <h2>Сделать заказ</h2>
+
+        <form action="https://httpbin.org/post" method="POST" class="order-form">
+
+            <div class="order-columns">
+
+                <!-- БЛОК ЗАКАЗА -->
+                <div class="order-block">
+                    <h3>Ваш заказ</h3>
+
+                    <label for="soup">Суп</label>
+                    <select id="soup" name="soup" required>
+                        <option value="">-- Выберите суп --</option>
+                        <option value="tomato">Томатный суп</option>
+                        <option value="chicken">Куриный суп</option>
+                        <option value="vegetable">Овощной суп-пюре</option>
+                    </select>
+
+                    <label for="main">Главное блюдо</label>
+                    <select id="main" name="main" required>
+                        <option value="">-- Выберите главное блюдо --</option>
+                        <option value="steak">Куриный стейк</option>
+                        <option value="carbonara">Паста карбонара</option>
+                        <option value="fish_rice">Рыба с рисом</option>
+                    </select>
+
+                    <label for="drink">Напиток</label>
+                    <select id="drink" name="drink" required>
+                        <option value="">-- Выберите напиток --</option>
+                        <option value="kompot">Компот</option>
+                        <option value="mors">Морс</option>
+                        <option value="latte">Латте</option>
+                    </select>
+
+                    <label for="comment">Комментарии к заказу</label>
+                    <textarea id="comment" name="comment" rows="5"></textarea>
+                </div>
+
+                <!-- БЛОК ДАННЫХ КЛИЕНТА -->
+                <div class="order-block">
+                    <h3>Ваши данные</h3>
+
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" type="text" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+
+                    <label class="checkbox">
+                        <input type="checkbox" name="subscribe" checked>
+                        Получать информацию о скидках и акциях
+                    </label>
+
+                    <label for="phone">Номер телефона</label>
+                    <input id="phone" name="phone" type="tel" required>
+
+                    <label for="address">Адрес доставки</label>
+                    <input id="address" name="address" type="text" required>
+
+                    <fieldset>
+                        <legend>Время доставки</legend>
+
+                        <label>
+                            <input type="radio" name="delivery_time" value="asap" required>
+                            Как можно скорее
+                        </label>
+
+                        <label>
+                            <input type="radio" name="delivery_time" value="by_time" required>
+                            К указанному времени
+                        </label>
+                    </fieldset>
+
+                    <label for="time">Укажите время доставки</label>
+                    <input id="time" name="time" type="time"
+                           min="07:00" max="23:00" step="300">
+
+                    <button type="reset" class="reset-btn">Сбросить</button>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </div>
+
+            </div>
+        </form>
+    </section>
+
     <footer id="contacts">
         <div class="container">
             <div class="contact-info">
