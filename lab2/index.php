@@ -113,7 +113,10 @@
             </div>
         </section>
     </main>
-
+<!-- ДОБАВЛЕННЫЙ БЛОК — КНОПКА ДЛЯ ПЕРЕХОДА К ЗАКАЗУ -->
+<div class="order-button-wrapper">
+    <a href="order-form.html" class="order-button">Перейти к оформлению заказа</a>
+</div>
     <footer id="contacts">
         <div class="container">
             <div class="contact-info">
