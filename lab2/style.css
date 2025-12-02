@@ -205,102 +205,128 @@ footer {
         text-align: center;
     }
 }
-/* ===============================
-   БЛОК СДЕЛАТЬ ЗАКАЗ (НИЖНЯЯ ФОРМА)
-   =============================== */
+/* ========== Блок СДЕЛАТЬ ЗАКАЗ ========== */
 
 .order-section {
-    margin-top: 60px;
-    background: #fff;
-    padding: 40px 0;
+    margin-top: 40px;
 }
 
 .order-section h2 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    margin-bottom: 25px;
+    font-size: 32px;
     font-weight: 700;
 }
 
-/* Контейнер формы */
 .order-form {
-    background: #ffffff;
-    padding: 30px 40px;
-    border-radius: 20px;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.08);
-}
-
-/* Две колонки */
-.order-columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* Каждый блок внутри */
-.order-block {
-    flex: 1;
-}
-
-.order-block h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.order-block label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 4px;
-    font-weight: 600;
-}
-
-.order-block input,
-.order-block select,
-.order-block textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
     border: 1px solid #ccc;
-    font-size: 1rem;
+    padding: 40px 50px;
     background: #fff;
 }
 
-.order-block textarea {
-    resize: vertical;
+.order-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-/* Чекбокс аккуратный */
+/* Заголовки */
+.order-block h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ЛЕВАЯ КОЛОНКА */
+#order-list p {
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.order-total {
+    margin: 25px 0;
+    font-size: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    resize: vertical;
+    border: 1px solid #ccc;
+}
+
+/* ПРАВАЯ КОЛОНКА */
+
+.order-block label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.order-block input[type="text"],
+.order-block input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Чекбокс */
 .checkbox {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 12px;
 }
 
-/* Радио кнопки */
+.checkbox input[type="checkbox"] {
+    transform: scale(1.3);
+}
+
+/* Радиокнопки */
 fieldset {
-    border: none !important;
-    padding: 0;
     margin-top: 20px;
 }
 
 fieldset legend {
-    margin-bottom: 10px;
     font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.radio input[type="radio"] {
+    transform: scale(1.2);
+}
+
+.delivery-note {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #777;
 }
 
 /* Кнопки */
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
 .reset-btn,
 .submit-btn {
-    margin-top: 25px;
     padding: 12px 20px;
     border: none;
-    border-radius: 10px;
-    font-size: 15px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .reset-btn {
@@ -309,16 +335,16 @@ fieldset legend {
 
 .submit-btn {
     background: tomato;
-    color: white;
+    color: #fff;
     font-weight: 700;
 }
 
-.reset-btn:hover {
-    background: #b6b6b6;
+.submit-btn:hover {
+    background: #d6401f;
 }
 
-.submit-btn:hover {
-    background: #e14f32;
+.reset-btn:hover {
+    background: #bcbcbc;
 }
 
 /* Адаптив */
@@ -327,3 +353,4 @@ fieldset legend {
         flex-direction: column;
     }
 }
+
