@@ -155,51 +155,77 @@
                 </div>
 
                 <!-- БЛОК ДАННЫХ КЛИЕНТА -->
-                <div class="order-block">
-                    <h3>Ваши данные</h3>
+            <section class="order-section">
+    <h2>Сделать заказ</h2>
 
-                    <label for="name">Имя</label>
-                    <input id="name" name="name" type="text" required>
+    <div class="order-form">
+        <div class="order-columns">
 
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" required>
+            <!-- ЛЕВАЯ КОЛОНКА -->
+            <div class="order-block">
+                <h3>Ваш заказ</h3>
 
-                    <label class="checkbox">
-                        <input type="checkbox" name="subscribe" checked>
-                        Получать информацию о скидках и акциях
+                <div id="order-list">
+                    <!-- Здесь JS будет добавлять блюда -->
+                </div>
+
+                <div class="order-total">
+                    <strong>Стоимость заказа</strong><br>
+                    <span id="total-price">0₽</span>
+                </div>
+
+                <label for="comment">Комментарии к заказу</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА -->
+            <div class="order-block">
+                <h3>Ваши данные</h3>
+
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+                <label class="checkbox">
+                    <input type="checkbox" id="promo" name="promo">
+                    Получать информацию о скидках и акциях
+                </label>
+
+                <label for="phone">Номер телефона</label>
+                <input type="text" id="phone" name="phone">
+
+                <label for="address">Адрес доставки</label>
+                <input type="text" id="address" name="address">
+
+                <p class="delivery-note">Доставка осуществляется только по Москве</p>
+
+                <fieldset>
+                    <legend>Время доставки:</legend>
+
+                    <label class="radio">
+                        <input type="radio" name="delivery_time" value="fast">
+                        Как можно скорее
                     </label>
 
-                    <label for="phone">Номер телефона</label>
-                    <input id="phone" name="phone" type="tel" required>
+                    <label class="radio">
+                        <input type="radio" name="delivery_time" value="scheduled">
+                        К указанному времени
+                    </label>
+                </fieldset>
 
-                    <label for="address">Адрес доставки</label>
-                    <input id="address" name="address" type="text" required>
-
-                    <fieldset>
-                        <legend>Время доставки</legend>
-
-                        <label>
-                            <input type="radio" name="delivery_time" value="asap" required>
-                            Как можно скорее
-                        </label>
-
-                        <label>
-                            <input type="radio" name="delivery_time" value="by_time" required>
-                            К указанному времени
-                        </label>
-                    </fieldset>
-
-                    <label for="time">Укажите время доставки</label>
-                    <input id="time" name="time" type="time"
-                           min="07:00" max="23:00" step="300">
-
-                    <button type="reset" class="reset-btn">Сбросить</button>
-                    <button type="submit" class="submit-btn">Отправить</button>
+                <div class="buttons">
+                    <button type="reset" class="reset-btn">Отменить</button>
+                    <button type="submit" class="submit-btn">Сделать заказ</button>
                 </div>
 
             </div>
-        </form>
-    </section>
+        </div>
+    </div>
+</section>
+
+     
 
     <footer id="contacts">
         <div class="container">
