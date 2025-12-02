@@ -205,91 +205,125 @@ footer {
         text-align: center;
     }
 }
-/* --- ФОРМА ЗАКАЗА --- */
+/* ===============================
+   БЛОК СДЕЛАТЬ ЗАКАЗ (НИЖНЯЯ ФОРМА)
+   =============================== */
 
-.form-title {
-    margin-top: 30px;
+.order-section {
+    margin-top: 60px;
+    background: #fff;
+    padding: 40px 0;
+}
+
+.order-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
     font-size: 2rem;
     font-weight: 700;
 }
 
+/* Контейнер формы */
 .order-form {
-    background: #fff;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    display: grid;
-    gap: 2rem;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
 }
 
-.order-form fieldset {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1.5rem;
+/* Две колонки */
+.order-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.order-form legend {
+/* Каждый блок внутри */
+.order-block {
+    flex: 1;
+}
+
+.order-block h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
     font-weight: 700;
-    padding: 0 10px;
 }
 
-.order-form label {
+.order-block label {
     display: block;
-    margin-top: 15px;
+    margin-top: 12px;
+    margin-bottom: 4px;
     font-weight: 600;
 }
 
-.order-form select,
-.order-form input,
-.order-form textarea {
+.order-block input,
+.order-block select,
+.order-block textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 10px;
     border: 1px solid #ccc;
-    margin-top: 5px;
+    font-size: 1rem;
+    background: #fff;
 }
 
-.radio-group label {
-    display: block;
-    margin-top: 8px;
+.order-block textarea {
+    resize: vertical;
 }
 
-.buttons {
-    margin-top: 20px;
+/* Чекбокс аккуратный */
+.checkbox {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Радио кнопки */
+fieldset {
+    border: none !important;
+    padding: 0;
+    margin-top: 20px;
+}
+
+fieldset legend {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Кнопки */
+.reset-btn,
+.submit-btn {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .reset-btn {
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    cursor: pointer;
+    background: #ccc;
 }
 
 .submit-btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     background: tomato;
-    color: #fff;
-    font-weight: 600;
-}
-
-.order-button-wrapper {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.order-button {
-    background: tomato;
-    padding: 15px 40px;
-    color: #fff;
+    color: white;
     font-weight: 700;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1.2rem;
 }
 
+.reset-btn:hover {
+    background: #b6b6b6;
+}
+
+.submit-btn:hover {
+    background: #e14f32;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .order-columns {
+        flex-direction: column;
+    }
+}
