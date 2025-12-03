@@ -154,78 +154,67 @@
                     <textarea id="comment" name="comment" rows="5"></textarea>
                 </div>
 
-                <!-- БЛОК ДАННЫХ КЛИЕНТА -->
-            <section class="order-section">
-    <h2>Сделать заказ</h2>
+               <section id="order">
+    <h2 class="order-title">Сделать заказ</h2>
 
-    <div class="order-form">
-        <div class="order-columns">
+    <div class="order-wrapper">
+        <!-- ЛЕВАЯ КОЛОНКА -->
+        <div class="order-left">
+            <h3>Ваш заказ</h3>
 
-            <!-- ЛЕВАЯ КОЛОНКА -->
-            <div class="order-block">
-                <h3>Ваш заказ</h3>
-
-                <div id="order-list">
-                    <!-- Здесь JS будет добавлять блюда -->
-                </div>
-
-                <div class="order-total">
-                    <strong>Стоимость заказа</strong><br>
-                    <span id="total-price">0₽</span>
-                </div>
-
-                <label for="comment">Комментарии к заказу</label>
-                <textarea id="comment" name="comment" rows="4"></textarea>
+            <div id="order-items">
+                <!-- JS подставляет блюда -->
             </div>
 
-            <!-- ПРАВАЯ КОЛОНКА -->
-            <div class="order-block">
-                <h3>Ваши данные</h3>
+            <p class="price-title">Стоимость заказа</p>
+            <p class="price-value" id="total-price">0₽</p>
 
-                <label for="name">Имя</label>
-                <input type="text" id="name" name="name">
+            <label class="comment-label">Комментарии к заказу</label>
+            <textarea id="comment" rows="5"></textarea>
+        </div>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+        <!-- ПРАВАЯ КОЛОНКА -->
+        <div class="order-right">
+            <h3>Ваши данные</h3>
 
-                <label class="checkbox">
-                    <input type="checkbox" id="promo" name="promo">
-                    Получать информацию о скидках и акциях
-                </label>
+            <label>Имя</label>
+            <input type="text" id="name">
 
-                <label for="phone">Номер телефона</label>
-                <input type="text" id="phone" name="phone">
+            <label>Email</label>
+            <input type="email" id="email">
 
-                <label for="address">Адрес доставки</label>
-                <input type="text" id="address" name="address">
+            <label class="check-row">
+                <input type="checkbox" id="promo">
+                Получать информацию о скидках и акциях
+            </label>
 
-                <p class="delivery-note">Доставка осуществляется только по Москве</p>
+            <label>Номер телефона</label>
+            <input type="text" id="phone">
 
-                <fieldset>
-                    <legend>Время доставки:</legend>
+            <label>Адрес доставки</label>
+            <input type="text" id="address">
 
-                    <label class="radio">
-                        <input type="radio" name="delivery_time" value="fast">
-                        Как можно скорее
-                    </label>
+            <p class="delivery-note">Доставка осуществляется только по Москве</p>
 
-                    <label class="radio">
-                        <input type="radio" name="delivery_time" value="scheduled">
-                        К указанному времени
-                    </label>
-                </fieldset>
+            <p class="time-title">Время доставки:</p>
 
-                <div class="buttons">
-                    <button type="reset" class="reset-btn">Отменить</button>
-                    <button type="submit" class="submit-btn">Сделать заказ</button>
-                </div>
+            <label class="radio-row">
+                <input type="radio" name="time" value="fast">
+                Как можно скорее
+            </label>
 
+            <label class="radio-row">
+                <input type="radio" name="time" value="scheduled">
+                К указанному времени
+            </label>
+
+            <div class="btn-row">
+                <button class="btn-reset">Отменить</button>
+                <button class="btn-submit">Сделать заказ</button>
             </div>
         </div>
     </div>
 </section>
-
-     
 
     <footer id="contacts">
         <div class="container">
