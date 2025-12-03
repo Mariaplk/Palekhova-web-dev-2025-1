@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч | Food Construct</title>
+
+    <!-- Подключаем CSS (отдельный файл, ты попросила позже дать его отдельно) -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <h1>Food Construct</h1>
+            <nav>
+                <a href="../lab1/index.html">О нас</a>
+                <a href="index.html" class="active">Собрать ланч</a>
+                <a href="#">Заказы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- ⭐ ОБЩИЕ ФИЛЬТРЫ ДЛЯ ВСЕХ КАТЕГОРИЙ ⭐ -->
+    <div class="filters">
+        <!-- data-type используется для фильтрации -->
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="meat">Мясные</button>
+        <button class="filter-btn" data-filter="fish">Рыбные</button>
+        <button class="filter-btn" data-filter="veg">Вегетарианские</button>
+    </div>
+
+    <!-- ========= СУПЫ ========= -->
+    <section class="dishes-section">
+        <h2>Выберите суп</h2>
+        <div class="dishes-grid" id="soups"></div>
+    </section>
+
+    <!-- ========= ГЛАВНЫЕ БЛЮДА ========= -->
+    <section class="dishes-section">
+        <h2>Выберите главное блюдо</h2>
+        <div class="dishes-grid" id="mains"></div>
+    </section>
+
+    <!-- ========= НАПИТКИ ========= -->
+    <section class="dishes-section">
+        <h2>Выберите напиток</h2>
+        <div class="dishes-grid" id="drinks"></div>
+    </section>
+
+</main>
+
+<!-- ========= СДЕЛАТЬ ЗАКАЗ (вариант №2 — две колонки) ========= -->
+<section class="order-section">
+    <div class="container order-flex">
+
+        <!-- ⭐ ЛЕВАЯ КОЛОНКА: Список заказа ⭐ -->
+        <div class="order-left">
+            <h2>Ваш заказ</h2>
+            <ul id="orderList"></ul>
+
+            <p class="order-total">
+                Итого: <span id="orderTotal">0</span> ₽
+            </p>
+        </div>
+
+        <!-- ⭐ ПРАВАЯ КОЛОНКА: Данные пользователя ⭐ -->
+        <div class="order-right">
+            <h2>Ваши данные</h2>
+
+            <form class="order-form">
+                <label>Ваше имя</label>
+                <input type="text" placeholder="Введите имя">
+
+                <label>Телефон</label>
+                <input type="text" placeholder="+7 ___ ___ __ __">
+
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com">
+
+                <label>Комментарий к заказу</label>
+                <textarea rows="3" placeholder="Например: без лука, поострее..."></textarea>
+
+                <button type="submit" class="submit-btn">Отправить заказ</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-container">
+        <p class="footer-text">© 2024 Food Construct — конструктор ланчей</p>
+    </div>
+</footer>
+
+<!-- ========= JAVASCRIPT ========= -->
+<script>
+/* 
+    ⭐ МАССИВ ВСЕХ БЛЮД ⭐
+    - Добавлены новые блюда
+    - Категория (soup / main / drink)
+    - Тип (meat / fish / veg)
+*/
+const dishes = [
+    /* ==== СУПЫ ==== */
+    { name: "Томатный суп с базиликом", price: 210, weight: "350 г", img: "images/sup-tomato.jpg", category: "soup", type: "veg" },
+    { name: "Куриный суп с лапшой", price: 180, weight: "330 г", img: "images/sup-kur.jpg", category: "soup", type: "meat" },
+    { name: "Овощной суп-пюре", price: 195, weight: "340 г", img: "images/sup-ovosh.jpg", category: "soup", type: "veg" },
+
+    /* Новые супы */
+    { name: "Уха из форели", price: 320, weight: "350 г", img: "images/soup-fish.jpg", category: "soup", type: "fish" },
+    { name: "Грибной крем-суп", price: 250, weight: "330 г", img: "images/soup-mushroom.jpg", category: "soup", type: "veg" },
+
+    /* ==== ГЛАВНЫЕ БЛЮДА ==== */
+    { name: "Куриный стейк с овощами", price: 320, weight: "280 г", img: "images/chicken-steak.jpg", category: "main", type: "meat" },
+    { name: "Паста карбонара", price: 370, weight: "300 г", img: "images/pasta.jpg", category: "main", type: "meat" },
+    { name: "Рыба на пару с рисом", price: 340, weight: "310 г", img: "images/fish-rice.jpg", category: "main", type: "fish" },
+
+    /* Новые горячие */
+    { name: "Овощное рагу", price: 290, weight: "250 г", img: "images/veg-ragu.jpg", category: "main", type: "veg" },
+    { name: "Стейк из лосося", price: 480, weight: "300 г", img: "images/salmon-steak.jpg", category: "main", type: "fish" },
+
+    /* ==== НАПИТКИ ==== */
+    { name: "Компот из сухофруктов", price: 80, weight: "300 мл", img: "images/kompot.jpg", category: "drink", type: "veg" },
+    { name: "Морс из клюквы", price: 90, weight: "300 мл", img: "images/mors.jpg", category: "drink", type: "veg" },
+    { name: "Кофе латте", price: 150, weight: "250 мл", img: "images/latte.jpg", category: "drink", type: "veg" }
+];
+
+/* ⭐ Сортировка блюд по алфавиту ⭐ */
+dishes.sort((a, b) => a.name.localeCompare(b.name));
+
+/* ⭐ ФУНКЦИЯ ОТРИСОВКИ БЛЮД ⭐ */
+function renderDishes(filter = "all") {
+    document.getElementById("soups").innerHTML = "";
+    document.getElementById("mains").innerHTML = "";
+    document.getElementById("drinks").innerHTML = "";
+
+    dishes.forEach(dish => {
+        if (filter !== "all" && dish.type !== filter) return;
+
+        const card = `
+            <div class="dish-card" data-type="${dish.type}">
+                <img src="${dish.img}" alt="${dish.name}">
+                <p class="price">${dish.price} ₽</p>
+                <p class="name">${dish.name}</p>
+                <p class="weight">${dish.weight}</p>
+                <button class="add-btn" onclick='addToOrder(${JSON.stringify(dish).replace(/"/g, "&quot;")})'>
+                    Добавить
+                </button>
+            </div>
+        `;
+
+        if (dish.category === "soup") document.getElementById("soups").innerHTML += card;
+        else if (dish.category === "main") document.getElementById("mains").innerHTML += card;
+        else if (dish.category === "drink") document.getElementById("drinks").innerHTML += card;
+    });
+}
+
+renderDishes();
+
+/* ⭐ КНОПКИ ФИЛЬТРОВ ⭐ */
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderDishes(btn.dataset.filter);
+    });
+});
+
+/* ⭐ МАССИВ ЗАКАЗА ⭐ */
+let order = [];
+
+/* ⭐ ДОБАВЛЕНИЕ В ЗАКАЗ ⭐ */
+function addToOrder(dish) {
+    order.push(dish);
+    updateOrder();
+}
+
+/* ⭐ ОБНОВЛЕНИЕ ОТОБРАЖЕНИЯ ЗАКАЗА ⭐ */
+function updateOrder() {
+    const list = document.getElementById("orderList");
+    list.innerHTML = "";
+
+    let total = 0;
+
+    order.forEach((item, index) => {
+        total += item.price;
+
+        list.innerHTML += `
+            <li>
+                ${item.name} — ${item.price} ₽
+                <button class="remove-btn" onclick="removeItem(${index})">×</button>
+            </li>
+        `;
+    });
+
+    document.getElementById("orderTotal").textContent = total;
+}
+
+/* ⭐ УДАЛЕНИЕ БЛЮДА ⭐ */
+function removeItem(index) {
+    order.splice(index, 1);
+    updateOrder();
+}
+
+</script>
+
+</body>
+</html>
