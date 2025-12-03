@@ -114,115 +114,54 @@
         </section>
     </main>
 
-    <!-- ФОРМА ЗАКАЗА -->
-    <section class="order-section container">
-        <h2>Сделать заказ</h2>
+<!-- ====== СДЕЛАТЬ ЗАКАЗ ====== -->
+<section class="order-section">
+    <div class="container">
+        <h2 class="order-title">Сделать заказ</h2>
 
-        <form action="https://httpbin.org/post" method="POST" class="order-form">
+        <form class="order-form">
 
-            <div class="order-columns">
+            <!-- Выбор блюда -->
+            <label for="dish">Выберите блюдо:</label>
+            <select id="dish" name="dish" onchange="updatePrice()">
+                <option value="0" data-price="0">— выберите блюдо —</option>
+                <option value="Борщ" data-price="250">Борщ — 250 ₽</option>
+                <option value="Паста карбонара" data-price="420">Паста карбонара — 420 ₽</option>
+                <option value="Цезарь с курицей" data-price="380">Цезарь с курицей — 380 ₽</option>
+                <option value="Суп грибной" data-price="260">Суп грибной — 260 ₽</option>
+            </select>
 
-                <!-- БЛОК ЗАКАЗА -->
-                <div class="order-block">
-                    <h3>Ваш заказ</h3>
+            <!-- Количество порций -->
+            <label for="qty">Количество порций:</label>
+            <input type="number" id="qty" name="qty" min="1" value="1" onchange="updatePrice()">
 
-                    <label for="soup">Суп</label>
-                    <select id="soup" name="soup" required>
-                        <option value="">-- Выберите суп --</option>
-                        <option value="tomato">Томатный суп</option>
-                        <option value="chicken">Куриный суп</option>
-                        <option value="vegetable">Овощной суп-пюре</option>
-                    </select>
+            <!-- Итоговая сумма -->
+            <p class="total">Итого: <span id="totalPrice">0</span> ₽</p>
 
-                    <label for="main">Главное блюдо</label>
-                    <select id="main" name="main" required>
-                        <option value="">-- Выберите главное блюдо --</option>
-                        <option value="steak">Куриный стейк</option>
-                        <option value="carbonara">Паста карбонара</option>
-                        <option value="fish_rice">Рыба с рисом</option>
-                    </select>
+            <!-- Комментарий -->
+            <label for="comment">Комментарий к заказу:</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Например: без лука, поострее..."></textarea>
 
-                    <label for="drink">Напиток</label>
-                    <select id="drink" name="drink" required>
-                        <option value="">-- Выберите напиток --</option>
-                        <option value="kompot">Компот</option>
-                        <option value="mors">Морс</option>
-                        <option value="latte">Латте</option>
-                    </select>
-
-                    <label for="comment">Комментарии к заказу</label>
-                    <textarea id="comment" name="comment" rows="5"></textarea>
-                </div>
-
-               <section id="order">
-    <h2 class="order-title">Сделать заказ</h2>
-
-    <div class="order-wrapper">
-        <!-- ЛЕВАЯ КОЛОНКА -->
-        <div class="order-left">
-            <h3>Ваш заказ</h3>
-
-            <div id="order-items">
-                <!-- JS подставляет блюда -->
-            </div>
-
-            <p class="price-title">Стоимость заказа</p>
-            <p class="price-value" id="total-price">0₽</p>
-
-            <label class="comment-label">Комментарии к заказу</label>
-            <textarea id="comment" rows="5"></textarea>
-        </div>
-
-        <!-- ПРАВАЯ КОЛОНКА -->
-        <div class="order-right">
-            <h3>Ваши данные</h3>
-
-            <label>Имя</label>
-            <input type="text" id="name">
-
-            <label>Email</label>
-            <input type="email" id="email">
-
-            <label class="check-row">
-                <input type="checkbox" id="promo">
-                Получать информацию о скидках и акциях
-            </label>
-
-            <label>Номер телефона</label>
-            <input type="text" id="phone">
-
-            <label>Адрес доставки</label>
-            <input type="text" id="address">
-
-            <p class="delivery-note">Доставка осуществляется только по Москве</p>
-
-            <p class="time-title">Время доставки:</p>
-
-            <label class="radio-row">
-                <input type="radio" name="time" value="fast">
-                Как можно скорее
-            </label>
-
-            <label class="radio-row">
-                <input type="radio" name="time" value="scheduled">
-                К указанному времени
-            </label>
-
-            <div class="btn-row">
-                <button class="btn-reset">Отменить</button>
-                <button class="btn-submit">Сделать заказ</button>
-            </div>
-        </div>
+            <button type="submit" class="submit-btn">Отправить заказ</button>
+        </form>
     </div>
 </section>
 
-    <footer id="contacts">
-        <div class="container">
-            <div class="contact-info">
-                <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
-            </div>
-            <p>© 2025 Food Construct. Все права защищены.</p>
-        </div>
-    </footer>
-</body>
-</html>
+<!-- ====== ФУТЕР ====== -->
+<footer class="footer">
+    <div class="container footer-container">
+        <p class="footer-text">© 2024 Food Construct — конструктор ланчей</p>
+    </div>
+</footer>
+
+<!-- ====== JS пересчета суммы ====== -->
+<script>
+function updatePrice() {
+    const dish = document.getElementById("dish");
+    const qty = document.getElementById("qty").value;
+    const price = parseInt(dish.options[dish.selectedIndex].dataset.price);
+    const total = price * qty;
+    document.getElementById("totalPrice").textContent = total;
+}
+</script>
+
