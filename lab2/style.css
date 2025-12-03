@@ -206,151 +206,164 @@ footer {
     }
 }
 /* ========== Блок СДЕЛАТЬ ЗАКАЗ ========== */
-
-.order-section {
-    margin-top: 40px;
-}
-
-.order-section h2 {
+/* ОБЩИЙ БЛОК */
+.order-title {
     text-align: center;
-    margin-bottom: 25px;
     font-size: 32px;
-    font-weight: 700;
+    margin-bottom: 30px;
 }
 
-.order-form {
-    max-width: 1100px;
+/* Контейнер по центру */
+.order-wrapper {
+    width: 1000px;
     margin: 0 auto;
     border: 1px solid #ccc;
-    padding: 40px 50px;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
     background: #fff;
 }
 
-.order-columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-}
-
-/* Заголовки */
-.order-block h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
 /* ЛЕВАЯ КОЛОНКА */
-#order-list p {
-    margin: 0 0 12px 0;
-    line-height: 1.3;
+.order-left {
+    width: 45%;
 }
 
-.order-total {
-    margin: 25px 0;
+.order-left h3,
+.order-right h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#order-items p {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+}
+
+.price-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.price-value {
     font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.comment-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
 }
 
 textarea {
     width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    resize: vertical;
     border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    resize: vertical;
 }
 
 /* ПРАВАЯ КОЛОНКА */
+.order-right {
+    width: 45%;
+}
 
-.order-block label {
+.order-right label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
 }
 
-.order-block input[type="text"],
-.order-block input[type="email"] {
+.order-right input[type="text"],
+.order-right input[type="email"] {
     width: 100%;
-    padding: 10px;
-    border-radius: 8px;
     border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
 }
 
-/* Чекбокс */
-.checkbox {
+/* Чекбокс и радио */
+.check-row,
+.radio-row {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-top: 10px;
 }
 
-.checkbox input[type="checkbox"] {
-    transform: scale(1.3);
-}
-
-/* Радиокнопки */
-fieldset {
-    margin-top: 20px;
-}
-
-fieldset legend {
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.radio {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-}
-
-.radio input[type="radio"] {
+.check-row input,
+.radio-row input {
     transform: scale(1.2);
 }
 
 .delivery-note {
+    font-size: 13px;
+    color: #666;
     margin-top: 5px;
-    font-size: 14px;
-    color: #777;
 }
 
-/* Кнопки */
-.buttons {
+.time-title {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* КНОПКИ */
+.btn-row {
     margin-top: 25px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
-.reset-btn,
-.submit-btn {
-    padding: 12px 20px;
+.btn-reset {
+    background: #ddd;
     border: none;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 15px;
 }
 
-.reset-btn {
-    background: #ccc;
+.btn-submit {
+    background: #ff6b47;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.submit-btn {
-    background: tomato;
+.btn-submit:hover {
+    background: #e25532;
+}
+.footer-box {
+    position: absolute; 
+    right: 60px;
+    bottom: 60px;
+    width: 230px;
+    background: #000;
     color: #fff;
-    font-weight: 700;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
 }
 
-.submit-btn:hover {
-    background: #d6401f;
+.footer-box p {
+    margin: 8px 0;
+    font-size: 15px;
+    line-height: 1.3;
 }
 
-.reset-btn:hover {
-    background: #bcbcbc;
+.footer-box .phone {
+    font-weight: bold;
+    margin: 12px 0;
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-    .order-columns {
-        flex-direction: column;
-    }
+.footer-box .copy {
+    font-size: 14px;
+    line-height: 1.3;
 }
-
