@@ -114,54 +114,13 @@
         </section>
     </main>
 
-<!-- ====== СДЕЛАТЬ ЗАКАЗ ====== -->
-<section class="order-section">
-    <div class="container">
-        <h2 class="order-title">Сделать заказ</h2>
-
-        <form class="order-form">
-
-            <!-- Выбор блюда -->
-            <label for="dish">Выберите блюдо:</label>
-            <select id="dish" name="dish" onchange="updatePrice()">
-                <option value="0" data-price="0">— выберите блюдо —</option>
-                <option value="Борщ" data-price="250">Борщ — 250 ₽</option>
-                <option value="Паста карбонара" data-price="420">Паста карбонара — 420 ₽</option>
-                <option value="Цезарь с курицей" data-price="380">Цезарь с курицей — 380 ₽</option>
-                <option value="Суп грибной" data-price="260">Суп грибной — 260 ₽</option>
-            </select>
-
-            <!-- Количество порций -->
-            <label for="qty">Количество порций:</label>
-            <input type="number" id="qty" name="qty" min="1" value="1" onchange="updatePrice()">
-
-            <!-- Итоговая сумма -->
-            <p class="total">Итого: <span id="totalPrice">0</span> ₽</p>
-
-            <!-- Комментарий -->
-            <label for="comment">Комментарий к заказу:</label>
-            <textarea id="comment" name="comment" rows="3" placeholder="Например: без лука, поострее..."></textarea>
-
-            <button type="submit" class="submit-btn">Отправить заказ</button>
-        </form>
-    </div>
-</section>
-
-<!-- ====== ФУТЕР ====== -->
-<footer class="footer">
-    <div class="container footer-container">
-        <p class="footer-text">© 2024 Food Construct — конструктор ланчей</p>
-    </div>
-</footer>
-
-<!-- ====== JS пересчета суммы ====== -->
-<script>
-function updatePrice() {
-    const dish = document.getElementById("dish");
-    const qty = document.getElementById("qty").value;
-    const price = parseInt(dish.options[dish.selectedIndex].dataset.price);
-    const total = price * qty;
-    document.getElementById("totalPrice").textContent = total;
-}
-</script>
-
+    <footer id="contacts">
+        <div class="container">
+            <div class="contact-info">
+                <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+            </div>
+            <p>© 2025 Food Construct. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html
