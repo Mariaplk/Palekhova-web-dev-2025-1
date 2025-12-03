@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч | Food Construct</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../lab1/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Food Construct</h1>
+                <nav>
+                    <a href="../lab1/index.html">О нас</a>
+                    <a href="index.html" class="active">Собрать ланч</a>
+                    <a href="#">Заказы</a>
+                    <a href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dishes-section">
+            <h2>Выберите суп</h2>
+            <div class="dishes-grid" id="soup-dishes">
+            </div>
+        </section>
+
+        <section class="dishes-section">
+            <h2>Выберите главное блюдо</h2>
+            <div class="dishes-grid" id="main-dishes">
+            </div>
+        </section>
+
+        <section class="dishes-section">
+            <h2>Выберите напиток</h2>
+            <div class="dishes-grid" id="drink-dishes">
+            </div>
+        </section>
+    </main>
+
+    <section class="order-form" id="order-form">
+        <h2>Сделать заказ</h2>
+        <form method="POST" action="https://httpbin.org/post">
+            <div class="form-grid">
+                <div class="order-block">
+                    <h3>Ваш заказ</h3>
+        
+                    <div id="order-summary">
+                        <div class="empty-order">Ничего не выбрано</div>
+                    </div>
+
+                    <div id="order-total" style="display: none;">
+                        <strong>Стоимость заказа<br><span id="total-price">0</span>Р</strong>
+                    </div>
+
+                    <input type="hidden" name="soup" id="soup-input">
+                    <input type="hidden" name="main_course" id="main-input">
+                    <input type="hidden" name="drink" id="drink-input">
+
+                    <div style="margin-top: 1rem;">
+                        <label>Комментарии к заказу
+                            <textarea name="comments" rows="6"></textarea>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="data-block">
+                    <h3>Ваши данные</h3>
+                    
+                    <label>Имя
+                        <input type="text" name="name" required>
+                    </label>
+
+                    <label>Email
+                        <input type="email" name="email" required>
+                    </label>
+
+                    <label class="checkbox">
+                        <input type="checkbox" name="newsletter" checked>
+                        Получать информацию о скидках и акциях
+                    </label>
+
+                    <label>Номер телефона
+                        <input type="tel" name="phone" required>
+                    </label>
+
+                    <label>Адрес доставки
+                        <input type="text" name="address" required>
+                        <small>Доставка осуществляется только по Москве</small>
+                    </label>
+
+                    <fieldset>
+                        <legend>Время доставки:</legend>
+                        <label class="radio">
+                            <input type="radio" name="delivery_time" value="asap" required>
+                            Как можно скорее
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="delivery_time" value="specific" required>
+                            К указанному времени
+                        </label>
+                        
+                        <label class="time-label">
+                            Укажите время доставки
+                            <input type="time" name="delivery_time_specific" min="07:00" max="23:00" step="300">
+                            <small>Доступное время доставки с 7:00 до 23:00</small>
+                        </label>
+                    </fieldset>
+
+                    <div class="buttons">
+                        <button type="reset">Сбросить</button>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="contact-info">
+                <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script>
+        if (typeof dishes === 'undefined') {
+            console.error('Dishes not loaded!');
+            var dishes = [];
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
