@@ -1,49 +1,57 @@
 * {
-    margin: 0; /* убираем внешние отступы */
-    padding: 0; /* убираем внутренние отступы */
+    margin: 0; 
+    padding: 0; 
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6; /* межстрочный интервал */
+    line-height: 1.6; 
     color: #000;
-    background-color: #f9f9f9; /* светло-серый фон страницы */
+    background-color: #f9f9f9; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-header {    /* шапка сайта */
+html, body {
+    height: 100%;
+}
+
+header {   
     background-color: #fff;
     color: #000;
-    padding: 1.5rem 0; /* отступ сверху и снизу */
-    margin-bottom: 2rem;   /* отступ снизу */
+    padding: 1.5rem 0; 
+    margin-bottom: 2rem;  
     border-bottom: 1px solid #eee; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.container {      /* контейнер для центрирования контента */
+.container {      
     max-width: 1200px;
-    margin: 0 auto; /* центрирование по горизонтали */
+    margin: 0 auto; 
     padding: 0 2rem;
 }
 
-.header-content {  /* расположение элементов в шапке */
+.header-content {  
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-h1 {    /* главный заголовок */
+h1 {    
     font-size: 2.2rem;
     font-weight: 700;
     color: #000;
 }
 
-nav {    /* навигационное меню */
-    display: flex;
-    gap: 1.5rem;   /* расстояние между ссылками */
+nav {
+    display: flex;                
+    gap: 15px;                     
+    flex-wrap: wrap;                
 }
 
-nav a {    /* ссылки в навигации */
+nav a {   
     color: #000;
     text-decoration: none;
     font-weight: 600;
@@ -53,99 +61,30 @@ nav a {    /* ссылки в навигации */
     transition: all 0.3s ease;
 }
 
-nav a:hover {   /* эффект при наведении на ссылки */
+nav a.active {
+    color: tomato;
+}
+
+nav a:hover {   
     background-color: #f2f2f2;
     color: #d35400;
 }
 
 main {
-    margin-bottom: 2rem; /* отступ снизу в основном содержимом*/
-}
-
-section {  /* секции контента */
-    background: white;
-    margin: 2rem 0;
-    padding: 2rem;
-    border-radius: 8px; /* закругленные углы секций*/
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* легкая тень секций */
-}
-
-h2 {    /* заголовки секций */
-    color: #000;
-    margin-bottom: 0rem;
-    font-size: 1.8rem;
-    padding-bottom: 0.5rem;
-}
-
-/* Блок "О нас" с изображением и текстом */
-.about-content {
-    display: flex;          /* Гибкое расположение */
-    gap: 2rem;              /* Расстояние между элементами */
-    align-items: center;    /* Выравнивание по центру */
-}
-
-/* Изображение в блоке "О нас" */
-.about-image {
-    width: 700px;           /* Ширина изображения */
-    height: 400px;          /* Высота изображения */
-    border-radius: 8px;     /* Закругленные углы */
-    object-fit: cover;      /* Обрезка изображения по размеру */
-    border: 1px solid #ddd; /* Серая рамка */
-    background-color: #f0f0f0; /* Серый фон если нет изображения */
-    display: flex;          /* Для центрирования текста */
-    justify-content: center;/* Центрирование по горизонтали */
-    align-items: center;    /* Центрирование по вертикали */
-    color: #888;            /* Серый цвет текста */
-    font-style: italic;     /* Курсивный шрифт */
-}
-
-/* Абзацы текста */
-p {
-    font-size: 1.1rem;      /* Размер шрифта */
-    margin-bottom: 1rem;    /* Отступ снизу */
-    color: #000;            /* Черный цвет */
-    font-weight: 500;
-}
-
-/* Маркированные списки */
-ul {
-    list-style-position: inside; /* Маркеры внутри блока */
-    padding-left: 1rem;     /* Отступ слева */
-    font-weight: 500;
-}
-
-li {  /* Элементы списка */
-    margin: 1rem 0;
-    font-size: 1.1rem;
-    color: #000;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-th, td { /* Ячейки таблицы */
-    padding: 1rem;
-    text-align: left;
-    border: 1px solid #ddd;
-    color: #000;
-    font-weight: 600;
-}
-
-th { /* Заголовки таблицы */
+    margin-bottom: 2rem; 
+    flex: 1; /*заставляет основной контент растягиваться, свободное пространство в контейнере будет равномерно распределено между всеми элементами*/
     background: #f2f2f2;
     font-weight: 700;
     font-size: 1.2rem;
 }
 
-footer {  /* Подвал сайта */
+footer {  
     background-color: black;
     color: white; 
-    text-align: center;
-    padding: 2rem 0;
+    text-align: left;
+    padding: 1.5rem 0;
     margin-top: 2rem;
+    margin-left: -20rem;
 }
 
 .contact-info {
@@ -154,37 +93,100 @@ footer {  /* Подвал сайта */
     color: white; 
 }
 
-.contact-info a {    /* Ссылки в контактах */
+.contact-info a {    
     color: white;  
     text-decoration: none;
     font-weight: 600;
 }
 
-.contact-info a:hover { /* Эффект при наведении на контактные ссылки */
+.contact-info a:hover { 
     text-decoration: underline;
     color: #ffed85; 
 }
 
 footer p {
-    color: white; /* Белый шрифт для текста в футере */
+    color: white; 
 }
 
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        gap: 1rem;
+@media (max-width: 800px) {
+    .about-image {
+        width: 500px;           
+        height: 300px;         
     }
     
     nav {
-        flex-wrap: wrap;     /* Перенос на новую строку */
-        justify-content: center; /* Центрирование */
+        justify-content: space-between; 
     }
-    
-    .about-content {
-        flex-direction: column;
-    }
-    
+}
+
+@media (max-width: 600px) {
     .about-image {
-        width: 100%;
+        width: 100%;            
+        height: 250px;          
     }
+    
+    h1 {
+        text-align: center;     
+    }
+    
+    .header-content {
+        flex-direction: column; 
+        gap: 1rem;            
+    }
+    
+    nav {
+        flex-direction: column; 
+        align-items: center;   
+        gap: 10px;             
+    }
+    
+    nav a {
+        font-size: calc(1.1rem + 4px); 
+    }
+    
+    table {
+        font-size: 0.9rem;     
+    }
+    
+    th, td {
+        padding: 0.5rem;      
+    }
+}
+
+@media (max-width: 400px) {
+    .about-image {
+        width: 100%;           
+        height: 200px;         
+    }
+    
+    table {
+        font-size: 0.8rem;     
+    }
+    
+    th, td {
+        padding: 0.3rem;      
+    }
+    
+    nav a {
+        font-size: 1rem;      
+        padding: 0.8rem 1.2rem; 
+    }
+    
+    section {
+        padding: 1rem;        
+    }
+    
+    .container {
+        padding: 0 1rem;     
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
