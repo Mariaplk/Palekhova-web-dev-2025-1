@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка ланчей | Food Construct</title>
+    <title>Food Construct - Доставка бизнес-ланчей</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,85 +14,66 @@
                 <h1>Food Construct</h1>
                 <nav>
                     <a href="index.html" class="active">О нас</a>
-                    <a href="../lab2/index.html">Собрать ланч</a>
-                    <a href="#">Заказы</a>
+                    <a href="lunch.html">Собрать ланч</a>
+                    <a href="orders.html">Заказы</a>
                     <a href="#contacts">Контакты</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section id="about">
-            <img src="lunch.jpg" alt="Доставка бизнес-ланчей" class="about-image">
-            <h2>О нас</h2>
-            <div class="about-content">
-                <div>
-                    <p>Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
+    <main>
+        <div class="container">
+            <section class="about-section">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" 
+                         alt="Вкусная еда" 
+                         onerror="this.src='https://via.placeholder.com/800x400?text=Food+Construct'">
                 </div>
-            </div>
-        </section>
+                
+                <h2>О нас</h2>
+                <p class="about-text">Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
+            </section>
 
-        <section>
-            <h2>Преимущества Food Construct</h2>
-            <ul>
-                <li>Привозим обед к назначенному времени без опозданий</li>
-                <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
-                <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
-            </ul>
-        </section>
+            <section class="advantages">
+                <h2>Преимущества Food Construct</h2>
+                <ul>
+                    <li>Привозим обед к назначенному времени без опозданий</li>
+                    <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
+                    <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Топ-5 популярных блюд</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Название</th>
-                        <th>Количество заказов в неделю</th>
-                        <th>Цена</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Лазанья</td>
-                        <td>185</td>
-                        <td>385Р</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Том Ям с креветками</td>
-                        <td>161</td>
-                        <td>365Р</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Норвежский суп</td>
-                        <td>144</td>
-                        <td>270Р</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Жареная картошка с грибами</td>
-                        <td>132</td>
-                        <td>150Р</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Котлеты из курицы с картофельным пюре</td>
-                        <td>128</td>
-                        <td>225Р</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <section class="popular">
+                <h2>Топ-5 популярных блюд</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Название</th>
+                                <th>Кол-во заказов</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Лазанья</td><td>185</td><td>385 ₽</td></tr>
+                            <tr><td>2</td><td>Том Ям с креветками</td><td>161</td><td>365 ₽</td></tr>
+                            <tr><td>3</td><td>Норвежский суп</td><td>144</td><td>270 ₽</td></tr>
+                            <tr><td>4</td><td>Жареная картошка с грибами</td><td>132</td><td>150 ₽</td></tr>
+                            <tr><td>5</td><td>Котлеты из курицы с картофельным пюре</td><td>128</td><td>225 ₽</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer id="contacts">
         <div class="container">
-            <div class="contact-info">
-                <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+            <div class="footer-content">
+                <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+                <p>&copy; 2024 Food Construct. Все права защищены.</p>
             </div>
         </div>
     </footer>
