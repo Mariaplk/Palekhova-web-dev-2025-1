@@ -1,192 +1,256 @@
+/* ========== ОБНУЛЕНИЕ ========== */
 * {
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+/* ========== ОСНОВНЫЕ СТИЛИ ========== */
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6; 
-    color: #000;
-    background-color: #f9f9f9; 
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-html, body {
-    height: 100%;
-}
-
-header {   
-    background-color: #fff;
-    color: #000;
-    padding: 1.5rem 0; 
-    margin-bottom: 2rem;  
-    border-bottom: 1px solid #eee; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.container {      
+.container {
     max-width: 1200px;
-    margin: 0 auto; 
-    padding: 0 2rem;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.header-content {  
+/* ========== ШАПКА ========== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-h1 {    
-    font-size: 2.2rem;
+h1 {
+    font-size: 2rem;
     font-weight: 700;
-    color: #000;
 }
 
+/* ========== НАВИГАЦИЯ ========== */
 nav {
-    display: flex;                
-    gap: 15px;                     
-    flex-wrap: wrap;                
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-nav a {   
-    color: #000;
+nav a {
+    color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 25px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 nav a.active {
-    color: tomato;
-}
-
-nav a:hover {   
-    background-color: #f2f2f2;
-    color: #d35400;
-}
-
-main {
-    margin-bottom: 2rem; 
-    flex: 1; /*заставляет основной контент растягиваться, свободное пространство в контейнере будет равномерно распределено между всеми элементами*/
-    background: #f2f2f2;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-footer {  
-    background-color: black;
-    color: white; 
-    text-align: left;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    margin-left: -20rem;
-}
-
-.contact-info {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: white; 
-}
-
-.contact-info a {    
-    color: white;  
-    text-decoration: none;
+    background-color: rgba(255,255,255,0.2);
     font-weight: 600;
 }
 
-.contact-info a:hover { 
+nav a:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+main {
+    flex: 1;
+    padding: 40px 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 3px;
+}
+
+/* ========== ИЗОБРАЖЕНИЕ ========== */
+.about-image {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.02);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+}
+
+/* ========== ПРЕИМУЩЕСТВА ========== */
+.advantages ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.advantages li {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantages li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.advantages li::before {
+    content: '✓';
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ========== ТАБЛИЦА ========== */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover td {
+    background-color: #f8f9fa;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========== ПОДВАЛ ========== */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffed85;
     text-decoration: underline;
-    color: #ffed85; 
 }
 
-footer p {
-    color: white; 
-}
-
-@media (max-width: 800px) {
-    .about-image {
-        width: 500px;           
-        height: 300px;         
-    }
-    
-    nav {
-        justify-content: space-between; 
-    }
-}
-
-@media (max-width: 600px) {
-    .about-image {
-        width: 100%;            
-        height: 250px;          
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
     }
     
     h1 {
-        text-align: center;     
+        font-size: 1.8rem;
     }
     
-    .header-content {
-        flex-direction: column; 
-        gap: 1rem;            
+    .advantages ul {
+        grid-template-columns: 1fr;
     }
     
-    nav {
-        flex-direction: column; 
-        align-items: center;   
-        gap: 10px;             
-    }
-    
-    nav a {
-        font-size: calc(1.1rem + 4px); 
-    }
-    
-    table {
-        font-size: 0.9rem;     
-    }
-    
-    th, td {
-        padding: 0.5rem;      
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-@media (max-width: 400px) {
-    .about-image {
-        width: 100%;           
-        height: 200px;         
-    }
-    
-    table {
-        font-size: 0.8rem;     
-    }
-    
-    th, td {
-        padding: 0.3rem;      
-    }
-    
-    nav a {
-        font-size: 1rem;      
-        padding: 0.8rem 1.2rem; 
-    }
-    
-    section {
-        padding: 1rem;        
-    }
-    
+@media (max-width: 480px) {
     .container {
-        padding: 0 1rem;     
+        padding: 0 15px;
     }
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
 }
