@@ -1,69 +1,195 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка ланчей | Food Construct</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Food Construct</h1>
-                <nav>
-                    <a href="index.html" class="active">О нас</a>
-                    <a href="../lab2/index.html">Собрать ланч</a>
-                    <a href="#">Заказы</a>
-                    <a href="#contacts">Контакты</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
 
-    <main class="container">
-        <section id="about">
-            <img src="lunch.jpg" alt="Доставка бизнес-ланчей" class="about-image" onerror="this.src='https://via.placeholder.com/800x400?text=Food+Construct'">
-            <h2>О нас</h2>
-            <p>Food Construct - доставка бизнес-ланчей в Москве. Мы привезем вам горячую вкусную еду в любую точку города к назначенному времени.</p>
-        </section>
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6; 
+    color: #000;
+    background-color: #f9f9f9; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        <section>
-            <h2>Преимущества Food Construct</h2>
-            <ul>
-                <li>Привозим обед к назначенному времени без опозданий</li>
-                <li>Надежно упаковываем блюда в удобные контейнеры бесплатно</li>
-                <li>Доставляем ланчи весь день с 7:00 до 23:00</li>
-            </ul>
-        </section>
+html, body {
+    height: 100%;
+}
 
-        <section>
-            <h2>Топ-5 популярных блюд</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Название</th>
-                        <th>Количество заказов в неделю</th>
-                        <th>Цена</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>Лазанья</td><td>185</td><td>385Р</td></tr>
-                    <tr><td>2</td><td>Том Ям с креветками</td><td>161</td><td>365Р</td></tr>
-                    <tr><td>3</td><td>Норвежский суп</td><td>144</td><td>270Р</td></tr>
-                    <tr><td>4</td><td>Жареная картошка с грибами</td><td>132</td><td>150Р</td></tr>
-                    <tr><td>5</td><td>Котлеты из курицы с картофельным пюре</td><td>128</td><td>225Р</td></tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+header {   
+    background-color: #fff;
+    color: #000;
+    padding: 1.5rem 0; 
+    margin-bottom: 2rem;  
+    border-bottom: 1px solid #eee; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    <footer id="contacts">
-        <div class="container">
-            <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
-        </div>
-    </footer>
-</body>
-</html>
+.container {      
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 2rem;
+}
+
+.header-content {  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {    
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+nav {
+    display: flex;                
+    gap: 15px;                     
+    flex-wrap: wrap;                
+}
+
+nav a {   
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a.active {
+    color: tomato;
+}
+
+nav a:hover {   
+    background-color: #f2f2f2;
+    color: #d35400;
+}
+
+main {
+    margin-bottom: 2rem; 
+    flex: 1; /*заставляет основной контент растягиваться, свободное пространство в контейнере будет равномерно распределено между всеми элементами*/
+}
+
+th { 
+    background: #f2f2f2;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer {  
+    background-color: black;
+    color: white; 
+    text-align: left;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    margin-left: -20rem;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white; 
+}
+
+.contact-info a {    
+    color: white;  
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover { 
+    text-decoration: underline;
+    color: #ffed85; 
+}
+
+footer p {
+    color: white; 
+}
+
+@media (max-width: 800px) {
+    .about-image {
+        width: 500px;           
+        height: 300px;         
+    }
+    
+    nav {
+        justify-content: space-between; 
+    }
+}
+
+@media (max-width: 600px) {
+    .about-image {
+        width: 100%;            
+        height: 250px;          
+    }
+    
+    h1 {
+        text-align: center;     
+    }
+    
+    .header-content {
+        flex-direction: column; 
+        gap: 1rem;            
+    }
+    
+    nav {
+        flex-direction: column; 
+        align-items: center;   
+        gap: 10px;             
+    }
+    
+    nav a {
+        font-size: calc(1.1rem + 4px); 
+    }
+    
+    table {
+        font-size: 0.9rem;     
+    }
+    
+    th, td {
+        padding: 0.5rem;      
+    }
+}
+
+@media (max-width: 400px) {
+    .about-image {
+        width: 100%;           
+        height: 200px;         
+    }
+    
+    table {
+        font-size: 0.8rem;     
+    }
+    
+    th, td {
+        padding: 0.3rem;      
+    }
+    
+    nav a {
+        font-size: 1rem;      
+        padding: 0.8rem 1.2rem; 
+    }
+    
+    section {
+        padding: 1rem;        
+    }
+    
+    .container {
+        padding: 0 1rem;     
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
